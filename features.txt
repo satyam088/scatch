@@ -1,0 +1,23 @@
+// userModel
+
+full name - String
+email - String
+password - String 
+cart - Array
+isAdmin - boolean
+orders - Array
+contact-number
+Date of birth 
+Picture - DB
+
+
+// prodcut 
+
+image 
+name 
+price
+discount
+bgcolor
+panel color
+text color
+
