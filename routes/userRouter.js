@@ -3,7 +3,7 @@ const router = express.Router();
 const userModel = require('../models/userModel');
 const bcrypt = require('bcrypt');
 const dbgr = require('debug')("development:userRoute");
-const {registerUser , loginUser} = require('../controllers/authController');
+const {registerUser , loginUser , logout} = require('../controllers/authController');
 const isLoggedIn = require('../middlewares/isLoggedIn');
 
 router.get('/',function (req,res){
@@ -14,5 +14,7 @@ router.get('/',function (req,res){
 router.post('/register',registerUser);
 
 router.post('/login',loginUser);
+
+router.get('/logout',logout);
 
 module.exports = router ;

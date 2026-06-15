@@ -1,7 +1,7 @@
 const {genToken, getTokenData} = require('../utils/jwtFunction');
 const userModel = require('../models/userModel');
 
-async function isLoggedIn(req, res){
+async function isLoggedIn(req, res , next){
     if(!req.cookies.token){
         req.flash("error","YOu Need to login first");
         return res.redirect('/');
@@ -12,7 +12,6 @@ async function isLoggedIn(req, res){
         let user = await userModel
         .findOne({email : data.email})
         .select("-password");
-
         req.user = user ;
         return next();
     }catch(err){

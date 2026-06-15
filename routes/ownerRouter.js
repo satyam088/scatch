@@ -25,4 +25,8 @@ router.get('/',function (req,res){
     res.send("HELLO");
 });
 
+router.get('/adminpanel',(req,res )=>{
+    let success = req.flash('success');
+    res.render('createproducts',{success});
+})
 module.exports = router ;

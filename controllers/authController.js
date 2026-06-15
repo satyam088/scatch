@@ -19,7 +19,7 @@ async function  registerUser(req, res){
             if(createdUser){
                 let token = genToken(createdUser);
                 res.cookie('token',token);   
-                res.status(201).send(createdUser);
+                res.status(201).redirect('/shop');
             }else{
                 res.status(500).send("Failed");
                 res.status(500).send(err.message);
@@ -42,7 +42,7 @@ async function  loginUser(req, res){
             if(verify){
                 let token = genToken(user);
                 res.cookie('token',token);
-                res.status(200).send("LOGGED IN");
+                res.status(200).redirect('/shop');
             }else{
                 res.send("Email or password Incorrect");
             }
@@ -55,5 +55,10 @@ async function  loginUser(req, res){
     }
 }
 
+ function logout(req ,res){
+    res.cookie('token','');
+    res.redirect('/');
+}
 
-module.exports = {registerUser , loginUser};
+
+module.exports = {registerUser , loginUser , logout};
