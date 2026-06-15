@@ -21,3 +21,11 @@ bgcolor
 panel color
 text color
 
+
+// today work 
+
+->sign up / login 
+/shop -> shop
+/users/cart -> cart 
+/owner/prodcuts -> show all prodcuts
+/owner/admin -< show admin panel to create products

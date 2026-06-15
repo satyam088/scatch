@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const ownerSchema = mongoose.Schema({
     name : String ,
     email : String ,
     password : String ,
@@ -10,9 +10,7 @@ const userSchema = mongoose.Schema({
             ref : 'product'
         }
     ],
-    contactNo : Number ,
-    picture : String ,
     gstin : String ,
 });
 
-module.exports = mongoose.model('user',userSchema , 'users');
+module.exports = mongoose.model('owner',ownerSchema , 'owners');

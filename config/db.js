@@ -1,12 +1,12 @@
 const mongoose = require('mongoose');
-
+const dbgr = require("debug")("development:mongoose");
 function connectDb(){
     try{
         mongoose.connect(process.env.MONGODB_URL);
-        console.log("Connected to DB");
+        dbgr("Connected to DB");
     }catch(err){
-        console.log(err);
-        console.log("Not connected to DB");
+        dbgr(err);
+        dbgr("Not connected to DB");
     }
 }
 
